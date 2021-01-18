@@ -1,5 +1,5 @@
 module.exports = {
-  ABI: require('./abi'),
+  ABI: process.env.NODE_ENV === 'production' ? require('./abi') : require('./abi_dev'),
   ABI_REFERRAL: require('./abi_referral'),
 
   RPC: process.env.NODE_ENV === 'production' ?
@@ -20,5 +20,5 @@ module.exports = {
     '0xce8419d22fa23196aeb354c028a231e51729f823',
   ADDRESS: process.env.NODE_ENV === 'production' ?
     '0xbf1dcb735e512b731abd3404c15df6431bd03d42' :
-    '0xbf1dcb735e512b731abd3404c15df6431bd03d42'
+    '0x29bDBE930E3a3461518a6bD815E7f982b881F68E'
 }
